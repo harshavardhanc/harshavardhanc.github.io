@@ -11,5 +11,4 @@ then
 else
  echo "Server is not reachable"
 fi
-echo "Thank you!"
 exit 0
