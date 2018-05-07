@@ -1,11 +1,5 @@
-#!/bin/bash
-ip=$1
-  a=$(ping -c1 $1)
+#/bin/bash
 
-if [ $? -eq 0 ]
-then
- echo "Server is reachable"
-else
- echo "Server is not reachable"
-fi
-exit 0
+echo "Enter a word or number"
+read string
+echo $string | rev
