@@ -9,7 +9,7 @@ elif [ $? -eq 0 ]
 then
  echo "Server is reachable"
 else
- echo "Server is not reachable"
+ echo "Server is not reachable, please bring it ip!"
 fi
 echo "Thank you!"
 exit 0
