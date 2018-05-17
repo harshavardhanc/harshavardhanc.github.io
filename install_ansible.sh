@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get update -y
-apt-get install python-pip -y
+sudo apt-get update -y
+sudo apt-get install python-pip -y
 
-pip install ansible==2.4.3
+sudo pip install ansible==2.4.3
