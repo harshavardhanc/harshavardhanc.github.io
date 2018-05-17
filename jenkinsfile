@@ -23,9 +23,9 @@ node('master') {
 
 	}
 
-	catch (err) {
+	catch (error) {
 	currentBuild.result = "FAILURE"
-        throw err
+        throw error
 
     }
 
