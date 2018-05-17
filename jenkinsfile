@@ -1,0 +1,32 @@
+#!/usr/bin/env groovy
+
+node('master') {
+	try {
+ 
+	stage('git-clone'){
+		sh ('rm -rf harshavardhanc.github.io')
+		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git -branch feature-1.1')
+		sh ('cd harshavardhanc.github.io && chmod 775 install_ansible.sh')
+		}
+
+	stage('Pre-Build'){
+        sh('./harshavardhanc.github.io/install_ansible.sh')
+	}
+
+	stage('deploy') {
+
+		sh 'ansible-playbook -i ./inventory/hosts ./main.yml --tags="apache2"'
+		sh "echo 'Started running'"
+
+	}
+
+}
+
+	catch (error) {
+	    throw (error) 
+
+    }
+
+
+
+}

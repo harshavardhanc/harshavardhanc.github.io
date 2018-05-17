@@ -1,0 +1,16 @@
+---
+
+
+# Playbook to install Jenkins
+
+- name: Installaing java
+  hosts: remote
+  roles:
+    - java
+    - jenkins
+
+
+- name: Installing apache
+  hosts: apache
+  roles:
+    - { role: 'apache', tags: 'apache2'}
