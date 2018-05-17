@@ -1,9 +1,8 @@
 #!/usr/bin/env groovy
 
 node('master') {
-	
+	currentBuild.result = "SUCCESS"	
 	try {
-  		
  
 	stage('git-clone'){
 
@@ -25,6 +24,7 @@ node('master') {
 	}
 
 	catch (err) {
+	currentBuild.result = "FAILURE"
         throw err
 
     }
