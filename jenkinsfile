@@ -1,0 +1,27 @@
+#!/usr/bin/env groovy
+
+node('master') {
+	
+	try {
+		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git')
+		sh ('cd harshavardhanc.github.io')
+		sh ('chmod -R  775 harshavardhanc.github.io/install_ansible.sh')
+		}
+
+	stage('Pre-Build'){
+        sh('./install_ansible.sh')
+	}
+
+	stage('deploy') {
+
+		sh ansible-playbook -i ./inventory/hosts ./main.yml --tags="apache2"
+		sh "echo 'Started running'"
+
+	}
+
+	catch(error) {
+        throw error
+
+    }
+
+}

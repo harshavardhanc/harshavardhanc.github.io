@@ -1,0 +1,10 @@
+---
+
+# Install java for Jenkins
+
+- name: Updating apt repo and installing default jdk
+  become: true
+  apt: 
+    name: default-jdk
+    update_cache: yes
+    state: present
