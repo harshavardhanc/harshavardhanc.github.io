@@ -2,4 +2,4 @@
 
 
 [apache]
-13.126.145.170 ansible_python_interpreter=/usr/bin/python3 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/root/newkey.pem
+13.126.145.170 ansible_python_interpreter=/usr/bin/python3 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=inventory/newkey.pem
