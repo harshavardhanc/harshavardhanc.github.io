@@ -6,8 +6,7 @@ node('master') {
 	stage('git-clone'){
 		sh ('rm -rf harshavardhanc.github.io')
 		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git')
-		sh ('cd harshavardhanc.github.io')
-		sh ('chmod -R  775 install_ansible.sh')
+		sh ('cd harshavardhanc.github.io && chmod -R  775 install_ansible.sh')
 		}
 
 	stage('Pre-Build'){
