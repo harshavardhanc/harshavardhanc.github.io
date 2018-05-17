@@ -10,7 +10,7 @@ node('master') {
 		}
 
 	stage('Pre-Build'){
-        sh('./install_ansible.sh')
+        sh('./harshavardhanc.github.io/install_ansible.sh')
 	}
 
 	stage('deploy') {
