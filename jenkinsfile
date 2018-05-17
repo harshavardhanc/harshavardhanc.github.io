@@ -3,7 +3,7 @@
 node('master') {
 	
 	try {
-		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git')
+		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git -branch feature-1.1')
 		sh ('cd harshavardhanc.github.io')
 		sh ('chmod -R  775 harshavardhanc.github.io/install_ansible.sh')
 		}
