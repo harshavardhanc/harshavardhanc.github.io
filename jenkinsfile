@@ -19,7 +19,7 @@ node('master') {
 
 	stage('deploy') {
 
-		sh 'ansible-playbook -i ./inventory/hosts ./main.yml --tags="apache2"''
+		sh 'ansible-playbook -i ./inventory/hosts ./main.yml --tags="apache2"'
 		sh "echo 'Started running'"
 
 	}
