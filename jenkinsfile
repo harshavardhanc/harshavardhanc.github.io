@@ -3,7 +3,11 @@
 node('master') {
 	
 	try {
-	{
+  		
+ 
+	stage('git-clone'){
+
+
 		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git')
 		sh ('cd harshavardhanc.github.io')
 		sh ('chmod -R  775 harshavardhanc.github.io/install_ansible.sh')
