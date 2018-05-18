@@ -5,20 +5,18 @@ node('master') {
  
 	stage('git-clone'){
 		sh ('rm -rf harshavardhanc.github.io')
-
 		sh ('git clone https://github.com/harshavardhanc/harshavardhanc.github.io.git')
-
 		sh ('cd harshavardhanc.github.io && chmod 775 install_ansible.sh')
-		
 		sh ('cd harshavardhanc.github.io/inventory && chmod 600 newkey.pem')
 		}
 
 	stage('Pre-Build'){
+
         sh('./harshavardhanc.github.io/install_ansible.sh')
 	}
 
 	stage('deploy') {
-			
+		sh 'export ANSIBLE_HOST_KEY_CHECKING=false'		
 		sh 'ansible-playbook -i ./harshavardhanc.github.io/inventory/hosts ./harshavardhanc.github.io/main.yml --tags="apache2" --private-key ./harshavardhanc.github.io/inventory/newkey.pem'
 		sh "echo 'Started running'"
 
