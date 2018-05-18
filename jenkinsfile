@@ -18,7 +18,7 @@ node('master') {
 	}
 
 	stage('deploy') {
-		sh '
+
 		sh 'ansible-playbook -i ./harshavardhanc.github.io/inventory/hosts ./harshavardhanc.github.io/main.yml --tags="apache2" --private-key ./harshavardhanc.github.io/inventory/newkey.pem'
 		sh "echo 'Started running'"
 
